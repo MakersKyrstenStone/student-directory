@@ -1,0 +1,10 @@
+puts "The students of Villians Academy"
+puts "--------------"
+puts "The Borg"
+puts "Darth Vader"
+puts "Terminator"
+puts "The Wicked Witch of indetermanite origin"
+puts "The Dragon from that film"
+print "overall we have "
+print 5
+print " naughty students"
