@@ -1,20 +1,20 @@
 # first print out list of students
 students = [
-  "The Borg",
-  "Darth Vader",
-  "Terminator",
-  "The Wicked Witch of indetermanite origin",
-  "The Dragon from that film",
-  "A very bad man"
+  ["The Borg", :january],
+  ["Darth Vader", :january],
+  ["Terminator", :january],
+  ["The Wicked Witch of indetermanite origin", :january],
+  ["The Dragon from that film", :january],
+  ["A very bad man", :january]
 ]
 def print_header
   puts "The students of Villians Academy"
   puts "--------------"
 end
 
-def print(names)
-  names.each do |name|
-    puts name
+def print(students)
+  students.each do |student|
+    puts "#{student[0]} (#{student[1]} cohort)"
   end
 end
 
