@@ -1,12 +1,27 @@
 # first print out list of students
-students = [
-  {name: "The Borg", cohort: :january},
-  {name: "Darth Vader", cohort: :january},
-  {name: "Terminator", cohort: :january},
-  {name: "The Wicked Witch of indetermanite origin", cohort: :january},
-  {name: "The Dragon from that film", cohort: :january},
-  {name: "A very bad man", cohort: :january}
-]
+# students = [
+#   {name: "The Borg", cohort: :january},
+#   {name: "Darth Vader", cohort: :january},
+#   {name: "Terminator", cohort: :january},
+#   {name: "The Wicked Witch of indetermanite origin", cohort: :january},
+#   {name: "The Dragon from that film", cohort: :january},
+#   {name: "A very bad man", cohort: :january}
+# ]
+
+def input_students
+  puts "Enter the names of the students"
+  puts "to finish enter a blank name"
+
+  students = []
+  name = gets.chomp
+  while !name.empty? do
+    students << {name: name, cohort: :January} 
+    puts "Now we have #{students.count} students"
+    name = gets.chomp
+  end
+  students
+end
+
 def print_header
   puts "The students of Villians Academy"
   puts "--------------"
@@ -22,6 +37,7 @@ def print_footer(names) # finally we print the total
   puts "\nOverall we have #{names.count} naughty students"
 end
 
+students = input_students
 print_header
 print(students)
 print_footer(students)
