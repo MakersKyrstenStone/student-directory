@@ -1,11 +1,11 @@
 # first print out list of students
 students = [
-  ["The Borg", :january],
-  ["Darth Vader", :january],
-  ["Terminator", :january],
-  ["The Wicked Witch of indetermanite origin", :january],
-  ["The Dragon from that film", :january],
-  ["A very bad man", :january]
+  {name: "The Borg", cohort: :january},
+  {name: "Darth Vader", cohort: :january},
+  {name: "Terminator", cohort: :january},
+  {name: "The Wicked Witch of indetermanite origin", cohort: :january},
+  {name: "The Dragon from that film", cohort: :january},
+  {name: "A very bad man", cohort: :january}
 ]
 def print_header
   puts "The students of Villians Academy"
@@ -14,12 +14,12 @@ end
 
 def print(students)
   students.each do |student|
-    puts "#{student[0]} (#{student[1]} cohort)"
+    puts "#{student[:name]} (#{student[:cohort]} cohort)"
   end
 end
 
 def print_footer(names) # finally we print the total
-  puts "Overall we have #{names.count} naughty students"
+  puts "\nOverall we have #{names.count} naughty students"
 end
 
 print_header
