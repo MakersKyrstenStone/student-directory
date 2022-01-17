@@ -9,7 +9,7 @@
 # ]
 
 def interactive_menu
-  students = []
+  @students = []
   loop do
     # prints a menu to give user options
     puts "1. Input student /s to list"
@@ -20,11 +20,11 @@ def interactive_menu
     # do what user selected
     case selection
     when "1"
-      students = input_students
+      @students = input_students
     when "2"
       print_header
-      print(students)
-      print_footer(students)
+      print(@students)
+      print_footer(@students)
     when "9"
       exit # causes program to end
     else
@@ -37,14 +37,14 @@ def input_students
   puts "Enter the names of the students"
   puts "to finish enter a blank name"
 
-  students = []
+  @students = []
   name = gets.chomp
   while !name.empty? do
-    students << {name: name, cohort: :January} 
-    puts "Now we have #{students.count} students"
+    @students << {name: name, cohort: :January} 
+    puts "Now we have #{@students.count} students"
     name = gets.chomp
   end
-  students
+  @students
 end
 
 def print_header
@@ -53,7 +53,7 @@ def print_header
 end
 
 def print(students)
-  students.each do |student|
+  @students.each do |student|
     puts "#{student[:name]} (#{student[:cohort]} cohort)"
   end
 end
